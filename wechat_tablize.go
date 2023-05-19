@@ -43,7 +43,7 @@ func checkStr2dRowLenAligned(str2d [][]string) error {
 	rowLen := len(str2d[0])
 	for i, row := range str2d {
 		if len(row) != rowLen {
-			return fmt.Errorf("二维数组列宽度不一致： RowLength %d excepted, but rowLength %d at rowIndex %d", rowLen, len(row), i)
+			return fmt.Errorf("二维数组列宽不一致： RowLength %d excepted, but rowLength %d at rowIndex %d", rowLen, len(row), i)
 		}
 	}
 
