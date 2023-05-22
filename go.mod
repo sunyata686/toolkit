@@ -1,4 +1,4 @@
-module toolkit
+module github.com/sunyata686/toolkit
 
 go 1.20
 
