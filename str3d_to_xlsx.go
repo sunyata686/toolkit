@@ -6,6 +6,7 @@ import (
 	"github.com/tealeg/xlsx"
 	"os"
 	"path"
+	"strings"
 )
 
 // 三维字符串数组转换为xlsx,错误则返回空路径和err
@@ -21,6 +22,11 @@ func Str3dToXlsx(str3d [][][]string, dir string, fileName string) (realativeFile
 		if err != nil {
 			return "", err
 		}
+	}
+
+	//不存在“.xlsx”后缀则自动添加
+	if !strings.HasSuffix(fileName, ".xlsx") {
+		fileName = fileName + ".xlsx"
 	}
 
 	//拼接目录、文件名
