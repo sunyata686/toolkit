@@ -16,9 +16,11 @@ func Str3dToXlsx(str3d [][][]string, dir string, fileName string) (realativeFile
 	}
 
 	//目录不存在则创建目录
-	err = os.MkdirAll(dir, 0755)
-	if err != nil {
-		return "", err
+	if dir != "" {
+		err = os.MkdirAll(dir, 0755)
+		if err != nil {
+			return "", err
+		}
 	}
 
 	//拼接目录、文件名
